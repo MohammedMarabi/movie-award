@@ -1,0 +1,20 @@
+.category-list {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+  
+    .category-item {
+      padding: 1.5em;
+  
+      h2 {
+        margin-bottom: 10px;
+    }
+  
+      .nominee-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+ 
+  

@@ -1,0 +1,19 @@
+.nominee-card {
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    width: 15%;
+  
+    &.selected {
+      border: 5px solid #3498db;
+    }
+  
+    &.not-selected {
+      border: 5px solid #ccc;
+    }
+  
+    .card-image {
+      width: 100%;
+    }
+  }
