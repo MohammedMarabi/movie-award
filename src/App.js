@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import './App.scss';
-import CategoryList from './components/categoriesComponent/categories';
 import Result from './components/resultComponent/result';
+import CategoryListContainer from './containers/categoryListContainer';
 import store from './redux/store';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   return (
     <Provider store={store}>
     <div className="main-container">
-      <CategoryList />
+      <CategoryListContainer />
       <Button className="submit-button" onClick={handleShowResults}>Submit</Button>
       {showResults && <Result onClose={handleCloseResults} />}
     </div>

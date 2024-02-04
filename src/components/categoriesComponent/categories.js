@@ -1,26 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Col from 'react-bootstrap/Col';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectNominee } from '../../redux/nomineesAction';
-import apiService from '../../services/apiService';
 import NomineeCard from '../nomineesComponent/nominees';
 import './categories.scss';
 
-const CategoryList = () => {
-  const dispatch = useDispatch();
-  const selectedNominees = useSelector(state => state.selectedNominees);
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    apiService.get('/getBallotData')
-      .then(response => setCategories(response.data.items))
-      .catch(error => console.error('Error:', error));
-  }, []);
-
-  const handleNomineeSelect = (categoryId, nomineeId) => {
-    dispatch(selectNominee(categoryId, nomineeId));
-
-  };
+const CategoryList = ({ categories, selectedNominees, handleNomineeSelect }) => {
 
   return (
     <div className='category-list'>
